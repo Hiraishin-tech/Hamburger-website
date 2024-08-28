@@ -5,9 +5,10 @@ $surname = null;
 $email = null;
 $telephone = null;
 $message = null;
+$success = null;
 
 $pohlavi = [
-    "Muž", "Žena", "Jiné"
+    "Muž", "Žena", "Jiné",
 ];
 
 if (array_key_exists("Odeslat", $_POST)) {
@@ -40,6 +41,20 @@ if (array_key_exists("Odeslat", $_POST)) {
         $errors["message"] = "Musíte vyplnit váš dotaz";
     } else if (mb_strlen($message) < 5) {
         $errors["message"] = "Vaše zpráva je příliš krátká";
+    }
+
+    // Když se správně vyplní kontaktní formulář
+    if (count($errors) === 0) {
+        $success = "Úspěšně odesláno";
+
+        // Zde přidat odeslání emailu
+        
+
+        $name = null;
+        $surname = null;
+        $email = null;
+        $telephone = null;
+        $message = null;
     }
 
 
@@ -203,6 +218,7 @@ if (array_key_exists("Odeslat", $_POST)) {
                 <h2 id="contact-form">Zeptejte se nás na cokoli</h2>
             </div>
             <form action="#contact-form" method="POST">
+                <?= $success ?>
                 <div>
                     <input type="text" placeholder="Jméno" name="name" value="<?= $name ?>"><br>
                     <?php if (array_key_exists("name", $errors)) echo $errors["name"] ?>
@@ -229,9 +245,9 @@ if (array_key_exists("Odeslat", $_POST)) {
                 </div>
                 
                 <select name="gender">
-                    <option value="Muž">Muž</option>
-                    <option value="Žena">Žena</option>
-                    <option value="Jiné">Jiné</option>
+                    <?php foreach ($pohlavi as $jednoPohlavi): ?>
+                    <option value="<?= $jednoPohlavi ?>" <?php if ($jednoPohlavi === $gender) echo "selected" ?> ><?= $jednoPohlavi ?></option>
+                    <?php endforeach ?>
                 </select><br>
                 <input type="submit" name="Odeslat" value="odeslat"><br>
             </form>
