@@ -5,6 +5,7 @@ $surname = null;
 $email = null;
 $telephone = null;
 $message = null;
+$gender = null;
 $success = null;
 
 $pohlavi = [
@@ -47,8 +48,36 @@ if (array_key_exists("Odeslat", $_POST)) {
     if (count($errors) === 0) {
         $success = "Úspěšně odesláno";
 
-        // Zde přidat odeslání emailu
-        
+    // Odeslání emailu
+
+    require 'vendor/autoload.php';
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+
+    try {
+    $mail->CharSet = "utf-8";
+    //Recipients
+    $mail->setFrom("$email", "{$name}");
+    $mail->addAddress('phammm@seznam.cz', 'Tomáš');     //Add a recipient
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Kontatní formulář Tomáš Burger';
+    $mail->Body = "
+    <b>Jméno:</b> $name
+    <b>Příjmení:</b> $surname
+    <b>Email:</b> <b>$email</b>
+    <b>Telefon:</b> $telephone
+    <b>Pohlaví:</b> $gender
+    <b>Zpráva:</b> $message 
+    
+    ";
+
+    $mail->send();
+
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 
         $name = null;
         $surname = null;
