@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Reusable */
+.row {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.main-heading h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.main-heading h2::after {
+    display: block;
+    content: "";
+    width: 200px;
+    border-bottom: 2px solid rgb(218, 41, 41);
+    margin: 15px auto;
+}
+
+
+/* Navigační menu */
+#logo img {
+    width: 16%;
+    position: absolute;
+    left: 13.5%;
+    top: -35px;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 28px;
+    margin-top: 18px;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+    border-bottom: 2px solid rgb(218, 41, 41);
+    transition: border-bottom 0.5s;
+}
+
+
+/* Header */
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/hamburger-background1.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.header-main {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.header-heading {
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    font-family: Arial;
+}
+
+.btn {
+    margin-top: 15px;
+}
+
+.btn a {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    margin-right: 17px;
+    border: 2px solid rgb(186, 45, 45);
+    border-radius: 10px;
+    padding: 2px 5px;
+    background-color: rgb(186, 45, 45);
+}
+
+.btn-full:hover,
+.btn-full:active {
+    background-color: rgb(218, 41, 41);
+    transition: background-color 0.5s;
+
+}
+
+.btn-transparent:link,
+.btn-transparent:visited {
+    border: 2px solid rgb(218, 41, 41);
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+
+.btn-transparent:hover,
+.btn-transparent:active {
+    background-color: rgb(218, 41, 41);
+    transition: background-color 0.5s;
+}
+
+/* Main */
+.hamburger-images ul li {
+    background-color: #000;
+    overflow: hidden;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #000;
+
+}
+
+.hamburger-images ul li img {
+    width: 100%;
+    height: 500px;
+    opacity: 0.5;
+    transform: scale(1.15);
+}
+
+.hamburger-images ul li img:hover {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s;
+    transition: transform 0.5s;
+}
+
+/* O našich Hamburgerech */
+.our-burger img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #000;
+}
+
+.rank {
+    display: inline-block;
+    font-size: 30px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.jedna {
+    margin-bottom: 25px;
+}
+
+.dva {
+    margin-bottom: 7px;
+}
+
+.our-burger p {
+    font-size: 20px;
+    position: relative;
+    top: -62px;
+    left: 50px;
+}
+
+/* Customer reference */
+.customer-reference {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/hamburger-background1.jpg);
+    height: 55vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.customer-reference h2 {
+    color: #fff;
+}
+
+.reference-people p {
+    color: #fff;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.signature {
+    font-family: Arial;
+    position: relative;
+    top: -78px;
+    left: 130px;
+}
+
+.reference-people img {
+    width: 30%;
+    border-radius: 50%;
+}
+
+/* Photo-gallery */
+
+/* Kvůli nadpisu u fotogalerie jsem dal margin: 20px auto */
+.main-heading2 h2 {
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.main-heading2 h2::after {
+    display: block;
+    content: "";
+    width: 250px;
+    border-bottom: 2px solid rgb(218, 41, 41);
+    margin: 15px auto;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+/* Contact-form */
+form {
+    text-align: center;
+}
+
+form input {
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(246, 238, 227);
+}
+
+form input[type="submit"]:hover {
+    background-color: rgb(218, 41, 41);
+    color: #fff;
+    transition: background-color 0.5s;
+}
+
+textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: rgb(246, 221, 208);
+}
+
+form select {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(246, 238, 227);
+
+}
+
+/* Footer */
+
+.social-contact img {
+    width: 3%;
+}
+
+.facebook-logo {
+    margin-right: 10px;
+}
+
+footer {
+    background-color: rgb(218, 41, 41);
+    margin: 15px 0 0 0;
+    padding: 10px;
+}
+
+.text-contact {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.tel-contact {
+    margin-bottom: 5px;
+}
+
+
+/* Float zrušení */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Šipka k odscrollování na menu */
+.arrow {
+    font-size: 4.5rem;
+    border: 1px solid rgb(218, 41, 41);
+    position: fixed;
+    right: 0.5%;
+    bottom: 0.5%;
+    background-color: rgb(218, 41, 41);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+.arrow.appear {
+    opacity: 1;
+}
