@@ -25,7 +25,7 @@ if (array_key_exists("Odeslat", $_POST)) {
         $errors["name"] = "Jméno je neplatné";
     } 
     if (mb_strlen($surname) < 3) {
-        $errors["surname"] = "Příjmené je neplatné";
+        $errors["surname"] = "Příjmení je neplatné";
     }
 
     if ($email === "") {
@@ -34,8 +34,11 @@ if (array_key_exists("Odeslat", $_POST)) {
         $errors["email"] = "Email je neplatný";
     }
 
-    if (!preg_match("/^(\\+420)?[1-9][0-9]{8}$/", $telephone)) {
-        $errors["telephone"] = "Telefonní číslo NEní platné";
+    if ($telephone === "") {
+        // Telefon není vyžadován
+        
+    } else if (!preg_match("/^(\\+420)?[1-9][0-9]{8}$/", $telephone)) {
+        $errors["telephone"] = "Telefonní číslo <span class='neplatne'>NE</span>ní platné";
     }
 
     if (mb_strlen($message) === 0) {
@@ -47,6 +50,7 @@ if (array_key_exists("Odeslat", $_POST)) {
     // Když se správně vyplní kontaktní formulář
     if (count($errors) === 0) {
         $success = "Úspěšně odesláno";
+        // header("Location: ?");
 
     // Odeslání emailu
 
@@ -64,11 +68,11 @@ if (array_key_exists("Odeslat", $_POST)) {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Kontatní formulář Tomáš Burger';
     $mail->Body = "
-    <b>Jméno:</b> $name
-    <b>Příjmení:</b> $surname
-    <b>Email:</b> <b>$email</b>
-    <b>Telefon:</b> $telephone
-    <b>Pohlaví:</b> $gender
+    <b>Jméno:</b> $name<br>
+    <b>Příjmení:</b> $surname<br>
+    <b>Email:</b> <b>$email</b><br>
+    <b>Telefon:</b> $telephone<br>
+    <b>Pohlaví:</b> $gender<br>
     <b>Zpráva:</b> $message 
     
     ";
@@ -247,30 +251,30 @@ if (array_key_exists("Odeslat", $_POST)) {
                 <h2 id="contact-form">Zeptejte se nás na cokoli</h2>
             </div>
             <form action="#contact-form" method="POST">
-                <?= $success ?>
+                <p class="success"><?= $success ?></p>
                 <div>
                     <input type="text" placeholder="Jméno" name="name" value="<?= $name ?>"><br>
-                    <?php if (array_key_exists("name", $errors)) echo $errors["name"] ?>
+                    <p class="error"><?php if (array_key_exists("name", $errors)) echo $errors["name"] ?></p>
                 </div>
                 
                 <div>
                     <input type="text" placeholder="Příjmení" name="surname" value="<?= $surname ?>"><br>
-                    <?php if (array_key_exists("surname", $errors)) echo $errors["surname"] ?>
+                    <p class="error"><?php if (array_key_exists("surname", $errors)) echo $errors["surname"] ?></p>
                 </div>
                 
                 <div>
                     <input type="email" placeholder="Email" name="email" value="<?= $email ?>"><br>
-                    <?php if (array_key_exists("email", $errors)) echo $errors["email"] ?>
+                    <p class="error"><?php if (array_key_exists("email", $errors)) echo $errors["email"] ?></p>
                 </div>
                 
                 <div>
                     <input type="text" placeholder="Telefon" name="telephone" value="<?= $telephone ?>"><br>
-                    <?php if (array_key_exists("telephone", $errors)) echo $errors["telephone"] ?>
+                    <p class="error"><?php if (array_key_exists("telephone", $errors)) echo $errors["telephone"] ?></p>
                 </div>
                 
                 <div>
                     <textarea cols="25" rows="8" placeholder="Napište svoji zprávu." name="message"><?= $message ?></textarea><br>
-                    <?php if (array_key_exists("message", $errors)) echo $errors["message"] ?>
+                    <p class="error"><?php if (array_key_exists("message", $errors)) echo $errors["message"] ?></p>
                 </div>
                 
                 <select name="gender">

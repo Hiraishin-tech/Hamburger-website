@@ -264,6 +264,7 @@ textarea {
 }
 
 form select {
+    margin-top: 8px;
     margin-bottom: 10px;
     padding: 5px;
     font-size: 20px;
@@ -331,4 +332,26 @@ footer {
 
 .arrow.appear {
     opacity: 1;
+}
+
+
+/* Contact-form error and success messages */
+form p.error {
+    color: rgb(218, 41, 41);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form span.neplatne {
+    color: orange;
+}
+
+form p.success {
+    color: green;
+    font-weight: bold;
+    /* background-color: green; */
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
 }
