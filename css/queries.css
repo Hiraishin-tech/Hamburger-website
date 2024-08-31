@@ -1,0 +1,42 @@
+@media (max-width: 1055px) {
+    #logo img {
+        display: none;
+    }
+}
+
+@media (max-width: 795px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        display: none;
+        position: relative;
+    }
+
+    nav ul li {
+        margin-left: 2rem;
+    }
+
+    div.hamburger-menu {
+        display: flex;
+        height: 10vh;
+        background-color: rgba(0, 0, 0, 0.708);
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(218, 41, 41);
+        z-index: 1;
+        position: fixed;
+        width: 100%;
+    }
+
+    div.menu-image {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    div.hamburger-menu img {
+        position: absolute;
+        display: inline-block;
+        width: 50px;
+        top: 0.7rem;
+        right: 10%; 
+    }
+}

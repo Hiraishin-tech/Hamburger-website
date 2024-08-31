@@ -73,7 +73,7 @@ const gallery = document.getElementById("gallery");
 const galleryHeading = document.getElementById("gallery-heading");
 
 const positionGalleryHeading = galleryHeading.getBoundingClientRect();
-console.log(positionGalleryHeading);
+// console.log(positionGalleryHeading);
 
 gallery.addEventListener("click", () => {
     window.scrollTo({
@@ -88,7 +88,7 @@ const contactButton = document.querySelector("#contact-button");
 const contactHeading = document.querySelector("#contact-heading");
 
 const positionContactHeading = contactHeading.getBoundingClientRect();
-console.log(positionContactHeading);
+// console.log(positionContactHeading);
 
 contact.addEventListener("click", () => {
     window.scrollTo({

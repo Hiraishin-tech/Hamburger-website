@@ -10,7 +10,7 @@ html, body {
 
 /* Reusable */
 .row {
-    width: 1140px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -59,6 +59,12 @@ nav ul li a:hover,
 nav ul li a:active {
     border-bottom: 2px solid rgb(218, 41, 41);
     transition: border-bottom 0.5s;
+}
+
+/* Hamburger-menu */
+
+div.hamburger-menu img {
+    display: none;
 }
 
 

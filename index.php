@@ -105,6 +105,7 @@ if (array_key_exists("Odeslat", $_POST)) {
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/queries.css">
     <script src="js/lightbox-plus-jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/88b85df50e.js" crossorigin="anonymous"></script>
     <title>Tomas Burger</title>
@@ -118,16 +119,21 @@ if (array_key_exists("Odeslat", $_POST)) {
                 <div id="logo">
                     <img src="images/logo2.png" alt="">
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#" id="our-burgers">Naše burgery</a></li>
-                        <li><a href="#" id="about-our-burgers">O našich Hamburgerech</a></li>
-                        <li><a href="#" id="review">Recenze</a></li>
-                        <li><a href="#" id="gallery">Galerie</a></li>
-                        <li><a href="#" id="contact">Kontakt</a></li>
-                    </ul>
+                <div class="hamburger-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#" id="our-burgers">Naše burgery</a></li>
+                            <li><a href="#" id="about-our-burgers">O našich Hamburgerech</a></li>
+                            <li><a href="#" id="review">Recenze</a></li>
+                            <li><a href="#" id="gallery">Galerie</a></li>
+                            <li><a href="#" id="contact">Kontakt</a></li>
+                        </ul>
                     <div class="clearfix"></div>
-                </nav>
+                    </nav>
+                    <div class="menu-image">
+                    <img src="images/hamburger-menu.png" alt="">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -303,6 +309,7 @@ if (array_key_exists("Odeslat", $_POST)) {
 <div class="arrow"><i class="fa-solid fa-arrow-up-long"></i></div>
 
 <script src="js/index.js"></script>
+<script src="js/hamburger-menu.js"></script>
 </body>
 
 </html>
