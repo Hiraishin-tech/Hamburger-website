@@ -63,6 +63,10 @@ nav ul li a:active {
 
 /* Hamburger-menu */
 
+div.hamburger-menu {
+    position: fixed;
+}
+
 div.hamburger-menu img {
     display: none;
 }

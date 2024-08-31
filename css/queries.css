@@ -19,7 +19,7 @@
     div.hamburger-menu {
         display: flex;
         height: 10vh;
-        background-color: rgba(0, 0, 0, 0.708);
+        background-color: rgba(0, 0, 0, 0.85);
         justify-content: space-between;
         border-bottom: 1px solid rgb(218, 41, 41);
         z-index: 1;

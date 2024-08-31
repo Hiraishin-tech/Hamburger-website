@@ -6,7 +6,7 @@ hamburgerImage.addEventListener("click", (event) => {
     if (hamburgerImage.getAttribute("src") == "images/hamburger-menu.png") {
         hamburgerImage.setAttribute("src", "images/cross-menu.png");
         navBarUl.style.display = "flex";
-        headerHamburgerMenu.style.height = "37vh";
+        headerHamburgerMenu.style.height = "35vh";
 
     } else {
         hamburgerImage.setAttribute("src", "images/hamburger-menu.png");

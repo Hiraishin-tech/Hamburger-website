@@ -25,14 +25,22 @@ window.addEventListener("wheel", (event) => {
 const ourBurgers = document.getElementById("our-burgers");
 const ourBurgersHeading = document.querySelector("div.main-heading.row h2");
 
-const positionOurBurger = ourBurgersHeading.getBoundingClientRect();
-
 ourBurgers.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const positionOurBurger = ourBurgersHeading.getBoundingClientRect();
+
     window.scrollTo({
         top: positionOurBurger.bottom - positionOurBurger.height,
         behavior: "smooth",
-    })
+    });
 });
+
+// ourBurgers.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     ourBurgersHeading.scrollIntoView({ behavior: "smooth" });
+// });
+
 
 const aboutOurBurgers = document.querySelector("#about-our-burgers");
 const aboutOurBurgersButton = document.querySelector(".about-our-burgers");
