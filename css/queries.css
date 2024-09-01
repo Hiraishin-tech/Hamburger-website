@@ -1,3 +1,7 @@
+/******* 
+Header
+*******/
+
 @media (max-width: 1055px) {
     #logo img {
         display: none;
@@ -45,3 +49,104 @@
         right: 10%; 
     }
 }
+
+/* About-our Burgers */
+@media (max-width: 1140px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }        
+
+    .span-1-of-2 {
+        width: 70%;
+    }
+
+    div.our-burger.row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger-images.row ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Photo-gallery */
+    
+    div.photo-gallery.row ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    
+}
+
+@media (max-width: 600px) {
+    .photo-gallery img {
+        height: 300px;
+    }
+}
+
+/* About-our burgers */
+
+@media (max-width: 600px) {
+    .hamburger-images.row ul li {
+        height: 350px;
+    }
+
+    .hamburger-images.row ul li img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .span-1-of-2 {
+        width: 95%;
+        margin-top: 10px;
+    }
+
+    .our-burger p {
+        width: 90%;
+    }
+
+    #about-our-burgers-heading {
+        margin-top: 50px;
+    }
+}
+
+/* References */
+@media (max-width: 1070px) {
+    .customer-reference {
+        height: 80vh;
+    }
+
+    div.reference-people.col.span-1-of-3 {
+        width: 48%;
+        margin-left: 10px;        
+    }
+}
+
+@media (max-width: 650px) {
+    .customer-reference {
+        height: 135vh;
+    }
+    div.reference-people.col.span-1-of-3 {
+        width: 95%;
+        margin-left: 10px;        
+    }
+
+    .reference-people p {
+        margin-left: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .reference-people p {
+        margin-left: 0;
+    }
+}
+

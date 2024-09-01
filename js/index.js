@@ -30,7 +30,7 @@ const ourBurgersHeading = document.querySelector("div.main-heading.row h2");
 ourBurgers.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Calculate the scroll position with the offset
+    // Vypočítá se pozice ke scrollování lehce nad Nadpisem
     const scrollPosition = ourBurgersHeading.offsetTop - offset;
 
     window.scrollTo({
