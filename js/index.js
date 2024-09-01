@@ -1,6 +1,8 @@
 const arrow = document.querySelector(".arrow");
 const header = document.querySelector("header");
 
+const mobileDevice = /iPhone|iPad|Ipod|Tablet|Android/i.test(navigator.userAgent);
+
 arrow.addEventListener("click", (event) => {
     window.scrollTo({
         top: 0,
@@ -19,6 +21,10 @@ window.addEventListener("wheel", (event) => {
         arrow.classList.remove("appear");
     } 
 });
+
+if (mobileDevice) {     // Na mobilních zařízeních a tabletech se šipka nahoru nezobrazí 
+    arrow.style.display = "none";
+}
 
 
 // animace po kliknutí na odkazu se odscrolluje dolů

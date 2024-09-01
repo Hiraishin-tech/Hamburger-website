@@ -279,7 +279,7 @@ if (array_key_exists("Odeslat", $_POST)) {
                 </div>
                 
                 <div>
-                    <textarea cols="25" rows="8" placeholder="Napište svoji zprávu." name="message"><?= $message ?></textarea><br>
+                    <textarea cols="23" rows="8" placeholder="Napište svoji zprávu." name="message"><?= $message ?></textarea><br>
                     <p class="error"><?php if (array_key_exists("message", $errors)) echo $errors["message"] ?></p>
                 </div>
                 
