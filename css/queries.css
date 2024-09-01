@@ -5,6 +5,11 @@
 }
 
 @media (max-width: 795px) {
+    section.fixed {
+        border-bottom: none;
+        background-color: transparent;
+    }
+
     nav ul {
         display: flex;
         flex-direction: column;

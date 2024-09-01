@@ -114,11 +114,11 @@ if (array_key_exists("Odeslat", $_POST)) {
 <body>
 
     <header>
-        <section>
+        <div id="logo">
+            <img src="images/logo2.png" alt="">
+        </div>
+        <section class="fixed">
             <div class="nav-menu row">
-                <div id="logo">
-                    <img src="images/logo2.png" alt="">
-                </div>
                 <div class="hamburger-menu">
                     <nav>
                         <ul>
@@ -253,7 +253,7 @@ if (array_key_exists("Odeslat", $_POST)) {
         </section>
 
         <section>
-            <div class="main-heading row">
+            <div class="main-heading row" id="contact-heading">
                 <h2 id="contact-form">Zeptejte se nás na cokoli</h2>
             </div>
             <form action="#contact-form" method="POST">
@@ -300,7 +300,7 @@ if (array_key_exists("Odeslat", $_POST)) {
                     class="facebook-logo"></a>
             <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram-logo.png" alt=""></a>
         </div>
-        <div class="text-contact row" id="contact-heading">
+        <div class="text-contact row">
             <p class="tel-contact">Tel. kontakt: +420 123 456 789</p>
             <p>Tomas Burger &copy; Všechna práva vyhrazena.</p>
         </div>

@@ -22,72 +22,80 @@ window.addEventListener("wheel", (event) => {
 
 
 // animace po kliknutí na odkazu se odscrolluje dolů
+const offset = 83; 
+
 const ourBurgers = document.getElementById("our-burgers");
 const ourBurgersHeading = document.querySelector("div.main-heading.row h2");
 
 ourBurgers.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const positionOurBurger = ourBurgersHeading.getBoundingClientRect();
+    // Calculate the scroll position with the offset
+    const scrollPosition = ourBurgersHeading.offsetTop - offset;
 
     window.scrollTo({
-        top: positionOurBurger.bottom - positionOurBurger.height,
-        behavior: "smooth",
+        top: scrollPosition,
+        behavior: "smooth"
     });
 });
-
-// ourBurgers.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     ourBurgersHeading.scrollIntoView({ behavior: "smooth" });
-// });
-
 
 const aboutOurBurgers = document.querySelector("#about-our-burgers");
 const aboutOurBurgersButton = document.querySelector(".about-our-burgers");
 const aboutOurBurgersHeading = document.querySelector("#about-our-burgers-heading");
 
-const positionAboutOurBurgers = aboutOurBurgersHeading.getBoundingClientRect();
-// console.log(positionAboutOurBurgers);
-
 aboutOurBurgersButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const scrollPostion = aboutOurBurgersHeading.offsetTop - offset;
     window.scrollTo({
-        top: positionAboutOurBurgers.bottom - positionAboutOurBurgers.height,
-        behavior: "smooth",
-    })
+       top: scrollPostion,
+       behavior: "smooth",  
+    });
+
 });
 
 aboutOurBurgers.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    const scrollPosition = aboutOurBurgersHeading.offsetTop - offset;
+
     window.scrollTo({
-        top: positionAboutOurBurgers.bottom - positionAboutOurBurgers.height,
-        behavior: "smooth",
-    })
+       top: scrollPosition,
+       behavior: "smooth", 
+    });
+
 });
 
 
 const review = document.getElementById("review");
 const reviewHeading = document.querySelector("#review-heading");
 
-const positionReviewHeading = reviewHeading.getBoundingClientRect();
+review.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    const scrollPosition = reviewHeading.offsetTop - offset;
 
-review.addEventListener("click", () => {
     window.scrollTo({
-        top: positionReviewHeading.bottom - positionReviewHeading.height,
+        top: scrollPosition,
         behavior: "smooth",
     });  
+
 });
+
+
 
 
 const gallery = document.getElementById("gallery");
 const galleryHeading = document.getElementById("gallery-heading");
 
-const positionGalleryHeading = galleryHeading.getBoundingClientRect();
-// console.log(positionGalleryHeading);
+gallery.addEventListener("click", (event) => {
+    event.preventDefault();
+    const scrollPosition = galleryHeading.offsetTop - offset;
 
-gallery.addEventListener("click", () => {
     window.scrollTo({
-        top: positionGalleryHeading.bottom - positionGalleryHeading.height,
+        top: scrollPosition,
         behavior: "smooth",
-    });  
+    }); 
 });
 
 
@@ -95,18 +103,24 @@ const contact = document.querySelector("#contact");
 const contactButton = document.querySelector("#contact-button");
 const contactHeading = document.querySelector("#contact-heading");
 
-const positionContactHeading = contactHeading.getBoundingClientRect();
-// console.log(positionContactHeading);
 
-contact.addEventListener("click", () => {
+contact.addEventListener("click", (event) => {
+    event.preventDefault();
+    const scrollPosition = contactHeading.offsetTop - offset;
+
     window.scrollTo({
-        top: positionContactHeading.bottom,
+        top: scrollPosition,
         behavior: "smooth",
-    });
+    }); 
 });
-contactButton.addEventListener("click", () => {
+
+contactButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    const scrollPosition = contactHeading.offsetTop - offset;
+
     window.scrollTo({
-        top: positionContactHeading.bottom,
+        top: scrollPosition,
         behavior: "smooth",
-    });
+    }); 
 });
